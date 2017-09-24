@@ -1,0 +1,21 @@
+#container {
+    width: 500px;
+    margin: 0px auto;
+}
+
+.post-box {
+    border-bottom: 1px solid grey;
+    display: block;
+    width: 100%;
+}
+
+.datetext {
+    color: grey;
+    font-size: 0.7em;
+    padding: 0px;
+    margin: 0px;
+}
+
+.post_title {
+    margin-bottom: 0px;
+}
