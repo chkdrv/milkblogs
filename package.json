@@ -1,0 +1,12 @@
+{
+    "name": "milkblogs",
+    "version": "0.0.1",
+    "main": "milk.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "express": "^4.15.4"
+    }
+}
