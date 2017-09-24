@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= blog_title %></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="container">
+    <h1><%= blog_title %></h1>
+    <% for(var i=0; i<all_posts.length; i++){ %>
+      <div class="post-box">
+        <h4 class="post_title"><a href="posts/<%= all_posts[i].hash %>?name=<%= encodeURI(all_posts[i].title) %>"><%= all_posts[i].title %></a></h4>
+        <p class="datetext"><%= all_posts[i].date %></p>
+        <p><%= all_posts[i].small %></p>
+      </div>
+    <% } %>
+    </div>
+  </body>
+</html>
