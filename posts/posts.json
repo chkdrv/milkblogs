@@ -1,7 +1,7 @@
 [
     {
         "title": "Welcome to Milkblogs",
-        "small": "A short snippet from the post, generally the first few lines",
+        "small": "Milkblogs is a tiny ~3mb blogging platform written in NodeJS. It is designed for bloggers who want to start blogs that are hackable to the very core.",
         "date": "23 September 2017",
         "hash": "XaXXR"
     }
