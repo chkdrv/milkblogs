@@ -1,13 +1,31 @@
 <!doctype html>
 <html>
   <head>
-    <title><%= blog_title %> Control Panel</title>
+    <title><%= blog_meta.title %> Control Panel</title>
     <link rel="stylesheet" href="../style.css">
   </head>
   <body>
     <div id="container">
-      <h1>Milkblogs Control Panel</h1>
-      <p>Posts (Click to edit)</p>
+      <h1 class="title">Milkblogs Control Panel</h1>
+      <form action="/fs/updateblogmeta" class="cp-meta-form" method="post">
+        <fieldset>
+          <legend>Blog Meta</legend>
+          <div class="cp-form-item">
+            <label>Blog Title:</label>
+            <input type="text" value="<%= blog_meta.title %>" name="name">
+          </div>
+          <div class="cp-form-item">
+            <label>Blog Secret:</label>
+            <input type="password" value="<% blog_meta.secret %>" name="secret">
+          </div>
+          <div class="cp-form-item">
+            <label>Enter (old) Blog Secret:</label>
+            <input type="password" name="chksecret">
+          </div>
+          <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+      <h3 class="cp-post-heading">Posts (Click to edit)</h3>
       <a class="cp-editorlink" href="/control-panel/compose">[new]</a>
       <% for(var i=0; i<all_posts.length; i++) { %>
       <a class="cp-editorlink" href="/control-panel/edit/<%= all_posts[i].hash %>?name=<%= encodeURI(all_posts[i].title) %>">\<%= all_posts[i].title %></a>
