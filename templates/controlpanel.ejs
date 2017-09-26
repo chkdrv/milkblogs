@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title><%= blog_meta.title %> Control Panel</title>
+    <title>Milkblogs Control Panel</title>
     <link rel="stylesheet" href="../style.css">
   </head>
   <body>
@@ -12,11 +12,11 @@
           <legend>Blog Meta</legend>
           <div class="cp-form-item">
             <label>Blog Title:</label>
-            <input type="text" value="<%= blog_meta.title %>" name="name">
+            <input type="text" value="<%= blog_meta.name %>" name="name">
           </div>
           <div class="cp-form-item">
-            <label>Blog Secret:</label>
-            <input type="password" value="<% blog_meta.secret %>" name="secret">
+            <label>Change Blog Secret:</label>
+            <input type="password" value="" name="secret">
           </div>
           <div class="cp-form-item">
             <label>Enter (old) Blog Secret:</label>
