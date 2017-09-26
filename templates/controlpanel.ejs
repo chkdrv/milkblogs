@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= blog_title %> Control Panel</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>Milkblogs Control Panel</h1>
+      <p>Posts (Click to edit)</p>
+      <a class="cp-editorlink" href="/control-panel/compose">[new]</a>
+      <% for(var i=0; i<all_posts.length; i++) { %>
+      <a class="cp-editorlink" href="/control-panel/edit/<%= all_posts[i].hash %>?name=<%= encodeURI(all_posts[i].title) %>">\<%= all_posts[i].title %></a>
+      <% } %>
+    </div>
+  </body>
+</html>
