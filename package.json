@@ -9,6 +9,6 @@
         "body-parser": "^1.18.2",
         "ejs": "^2.5.7",
         "express": "^4.15.4",
-        "micromarkdown": "^0.3.4-a"
+        "showdown": "^1.7.4"
     }
 }

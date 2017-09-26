@@ -1,13 +1,14 @@
 /* load up our dependencies */
 const express = require("express");
 const fs = require("fs");
-const mmd = require("micromarkdown");
+const showdown = require("showdown");
 const bodyparser = require("body-parser");
 const crypto = require("crypto");
 
 /* set global variables */
-let app = express();
-let port = process.env.PORT || 3000;
+var app = express();
+var port = process.env.PORT || 3000;
+var converter = new showdown.Converter();
 
 /* load up the data for the blog */
 var blogmeta = JSON.parse(fs.readFileSync("./blog.json", "utf8"));
@@ -40,7 +41,7 @@ app.get("/post/:posthash", (req, res) => {
             res.send("404. We're sorry, but the post you tried to access seems to be imaginary.");
             return;
         }
-        res.render("post", {blog_title: blogmeta.name, post_title: decodeURI(req.query.name), post_body: mmd.parse(data)});
+        res.render("post", {blog_title: blogmeta.name, post_title: decodeURI(req.query.name), post_body: converter.makeHtml(data)});
     });
 });
 
