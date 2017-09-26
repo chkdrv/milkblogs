@@ -78,7 +78,7 @@ app.post("/fs/savepost", (req, res) => {
                 for(var i=0; i<d.length; i++) {
                     if(d[i].hash == req.body.hash) {
                         d[i].title = req.body.title;
-                        d[i].small = req.body.content.substring(0, 200) + "...";
+                        d[i].small = (req.body.content.length < 200) ? req.body.content : req.body.content.substring(0, 200) + "...";
                     }
                 }
 
