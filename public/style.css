@@ -19,3 +19,21 @@
 .post_title {
     margin-bottom: 0px;
 }
+
+.cp-editorlink {
+    display: block;
+    font-family: "Courier", monospace;
+    font-size: 0.8em;
+}
+
+.cp-editorlink:hover{
+    background: #ddd;
+}
+
+.cp-posteditarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 500px;
+    font-family: "Courier", monospace;
+}
+
