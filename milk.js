@@ -82,9 +82,14 @@ app.get("/control-panel/compose", (req, res) => {
 /* update blog.json */
 app.post("/fs/updateblogmeta", (req, res) => {
   if (req.body.chksecret === blogmeta.secret) {
-    delete req.body.chksecret;
-    fs.writeFile("blog.json", JSON.stringify(req.body), (err) => {
+    console.log(req.body);
+    var d = req.body;
+    delete d.chksecret;
+    if (d.secret === "") d.secret = blogmeta.secret;
+    fs.writeFile("blog.json", JSON.stringify(d), (err) => {
       if (err) throw err;
+      console.log(d);
+      blogmeta = d;
       res.redirect("/control-panel");
     });
   } else res.end("Secret not correct");
